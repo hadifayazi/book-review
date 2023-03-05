@@ -18,6 +18,9 @@ function BookCreate({ onBookCreate }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     onBookCreate(title, author, review);
+    setTitle("");
+    setAuthor("");
+    setReview("");
   };
 
   return (
