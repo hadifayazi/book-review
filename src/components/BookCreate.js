@@ -24,21 +24,26 @@ function BookCreate({ onBookCreate }) {
   };
 
   return (
-    <div>
+    <div className="book-create">
+      <h3>Add a Book:</h3>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Title:</label>
-          <input onChange={handleTitleChange} value={title} />
-        </div>
-        <div>
-          <label>Author:</label>
-          <input onChange={handleAuthorChange} value={author} />
-        </div>
-        <div>
-          <label>Review:</label>
-          <input onChange={handleReviewChange} value={review} />
-        </div>
-        <button>Submit</button>
+        <label>Title:</label>
+        <input className="input" onChange={handleTitleChange} value={title} />
+
+        <label>Author:</label>
+        <input className="input" onChange={handleAuthorChange} value={author} />
+
+        <label>Review:</label>
+        {/* <input /> */}
+        <textarea
+          //   className="input"
+          onChange={handleReviewChange}
+          value={review}
+          rows="15"
+          cols="33"
+        />
+
+        <button className="button">Submit</button>
       </form>
     </div>
   );
