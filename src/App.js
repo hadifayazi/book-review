@@ -4,11 +4,10 @@ function App() {
   const [books, setBooks] = useState([]);
 
   const handleBookCreate = (title, author, review) => {
-    console.log(
-      `Book Title: ${title}, Book Author: ${author} ,Book Review: ${review}`
-    );
-    console.log(books.length);
-    const updatedBooks = [...books, { title, author, review }];
+    const updatedBooks = [
+      ...books,
+      { id: Math.floor(Math.random * 10000), title, author, review },
+    ];
 
     setBooks(updatedBooks);
   };
