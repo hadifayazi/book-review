@@ -1,8 +1,10 @@
 .review-text {
   width: 50%;
-  height: 10%;
+  max-height: 5%;
 }
-
+.create {
+  height: 70%;
+}
 /*! bulma.io v0.9.4 | MIT License | github.com/jgthms/bulma */
 .button,
 .file-cta,
