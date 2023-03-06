@@ -34,9 +34,8 @@ function BookCreate({ onBookCreate }) {
         <input className="input" onChange={handleAuthorChange} value={author} />
 
         <label>Review:</label>
-        {/* <input /> */}
         <textarea
-          //   className="input"
+          className="review-text"
           onChange={handleReviewChange}
           value={review}
           rows="15"
