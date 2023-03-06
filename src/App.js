@@ -7,6 +7,10 @@ function App() {
     console.log(
       `Book Title: ${title}, Book Author: ${author} ,Book Review: ${review}`
     );
+    console.log(books.length);
+    const updatedBooks = [...books, { title, author, review }];
+
+    setBooks(updatedBooks);
   };
   return (
     <div>
