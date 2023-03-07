@@ -18,9 +18,23 @@ function App() {
     const updatedBooks = books.filter((book) => book.id !== id);
     setBooks(updatedBooks);
   };
+
+  const editBookById = (id, title, author, review) => {
+    const updatedBooks = books.filter((book) => {
+      if (book.id === id) {
+        return { ...book, title, author, review };
+      }
+      return book;
+    });
+    setBooks(updatedBooks);
+  };
   return (
     <div className="app">
-      <BookList books={books} onDelete={deleteBookById} />
+      <BookList
+        books={books}
+        onDelete={deleteBookById}
+        onEdith={editBookById}
+      />
       <BookCreate onBookCreate={handleBookCreate} />
     </div>
   );
