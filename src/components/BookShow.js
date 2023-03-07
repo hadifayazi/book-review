@@ -41,7 +41,7 @@ function BookShow({ book, onDelete, onEdith }) {
   );
 
   if (showEdit) {
-    content = <BookEdit onEdith={onEdith} />;
+    content = <BookEdit onEdith={onEdith} book={book} />;
   }
   return content;
 }
