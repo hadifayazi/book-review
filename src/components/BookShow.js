@@ -1,10 +1,21 @@
+import { useState } from "react";
+import BookEdit from "./BookEdit";
 function BookShow({ book, onDelete }) {
+  const [showEdit, setShowEdit] = useState(false);
   const handleClick = () => {
     onDelete(book.id);
   };
-  return (
-    <div class="card">
+  const handleEditClick = () => {
+    setShowEdit(!showEdit);
+  };
+
+  let content = (
+    <div class="card" style={{ backgroundColor: "grey" }}>
       <button class="delete" onClick={handleClick}></button>
+      <button class="edit" onClick={handleEditClick}>
+        Edith
+      </button>
+
       <div class="card-image">
         <figure class="image" style={{ width: "200px" }}>
           <img
@@ -28,5 +39,10 @@ function BookShow({ book, onDelete }) {
       </div>
     </div>
   );
+
+  if (showEdit) {
+    content = <BookEdit />;
+  }
+  return content;
 }
 export default BookShow;
