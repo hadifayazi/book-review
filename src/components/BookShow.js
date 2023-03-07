@@ -1,6 +1,7 @@
 import { useState } from "react";
 import BookEdit from "./BookEdit";
-function BookShow({ book, onDelete, onEdith }) {
+
+function BookShow({ book, onDelete, onEdit }) {
   const [showEdit, setShowEdit] = useState(false);
   const handleClick = () => {
     onDelete(book.id);
@@ -8,32 +9,37 @@ function BookShow({ book, onDelete, onEdith }) {
   const handleEditClick = () => {
     setShowEdit(!showEdit);
   };
+  const handleSubmit = (id, title, author, review) => {
+    setShowEdit(false);
+    onEdit(id, title, author, review);
+    console.log(title, author, review);
+  };
 
   let content = (
-    <div class="card" style={{ backgroundColor: "grey" }}>
-      <button class="delete" onClick={handleClick}></button>
-      <button class="edit" onClick={handleEditClick}>
+    <div className="card" style={{ backgroundColor: "grey" }}>
+      <button className="delete" onClick={handleClick}></button>
+      <button className="edit" onClick={handleEditClick}>
         Edith
       </button>
 
-      <div class="card-image">
-        <figure class="image" style={{ width: "200px" }}>
+      <div className="card-image">
+        <figure className="image" style={{ width: "200px" }}>
           <img
             src="https://bulma.io/images/placeholders/1280x960.png"
             alt="{book.title}"
           />
         </figure>
       </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4">{book.title}</p>
+      <div className="card-content">
+        <div className="media">
+          <div className="media-content">
+            <p className="title is-4">{book.title}</p>
             <p>{book.id}</p>
             <div className="book-show">{book.author}</div>
           </div>
         </div>
 
-        <div class="content">
+        <div className="content">
           <p>{book.review}</p>
         </div>
       </div>
@@ -41,7 +47,7 @@ function BookShow({ book, onDelete, onEdith }) {
   );
 
   if (showEdit) {
-    content = <BookEdit onEdith={onEdith} book={book} />;
+    content = <BookEdit onSubmit={handleSubmit} book={book} />;
   }
   return content;
 }

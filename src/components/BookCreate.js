@@ -25,7 +25,7 @@ function BookCreate({ onBookCreate }) {
 
   return (
     <div className="columns is-mobile is-centered">
-      <div class="column is-half">
+      <div className="column is-half">
         <h3>Add a Book:</h3>
         <form onSubmit={handleSubmit}>
           <label className="label">Title:</label>

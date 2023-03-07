@@ -22,7 +22,7 @@ function App() {
   const editBookById = (id, title, author, review) => {
     const updatedBooks = books.filter((book) => {
       if (book.id === id) {
-        return { ...book, title, author, review };
+        return { ...book, id, title, author, review };
       }
       return book;
     });
@@ -30,11 +30,7 @@ function App() {
   };
   return (
     <div className="app">
-      <BookList
-        books={books}
-        onDelete={deleteBookById}
-        onEdith={editBookById}
-      />
+      <BookList books={books} onDelete={deleteBookById} onEdit={editBookById} />
       <BookCreate onBookCreate={handleBookCreate} />
     </div>
   );

@@ -1,5 +1,5 @@
 import { useState } from "react";
-function BookEdit({ book, onEdith }) {
+function BookEdit({ book, onSubmit }) {
   const [title, setTitle] = useState(book.title);
   const [author, setAuthor] = useState(book.author);
   const [review, setReview] = useState(book.review);
@@ -7,16 +7,16 @@ function BookEdit({ book, onEdith }) {
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
   };
+  const handleReviewChange = (event) => {
+    setReview(event.target.value);
+  };
   const handleAuthorChange = (event) => {
     setAuthor(event.target.value);
-  };
-  const handleReviesChange = (event) => {
-    setReview(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onEdith(book.id, title, author, review);
+    onSubmit(book.id, title, author, review);
   };
 
   return (
@@ -31,7 +31,7 @@ function BookEdit({ book, onEdith }) {
         <label className="label">Review:</label>
         <textarea
           className="textarea"
-          onChange={handleReviesChange}
+          onChange={handleReviewChange}
           value={review}
           rows="15"
           cols="33"
