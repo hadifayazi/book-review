@@ -12,7 +12,6 @@ function BookShow({ book, onDelete, onEdit }) {
   const handleSubmit = (id, title, author, review) => {
     setShowEdit(false);
     onEdit(id, title, author, review);
-    console.log(title, author, review);
   };
 
   let content = (
@@ -25,7 +24,7 @@ function BookShow({ book, onDelete, onEdit }) {
       <div className="card-image">
         <figure className="image" style={{ width: "200px" }}>
           <img
-            src="https://bulma.io/images/placeholders/1280x960.png"
+            src={`https://picsum.photos/seed/${book.id}/300/300`}
             alt="{book.title}"
           />
         </figure>
@@ -33,14 +32,13 @@ function BookShow({ book, onDelete, onEdit }) {
       <div className="card-content">
         <div className="media">
           <div className="media-content">
-            <p className="title is-4">{book.title}</p>
-            <p>{book.id}</p>
-            <div className="book-show">{book.author}</div>
+            <p className="title is-4">Title: {book.title}</p>
+            <div className="book-show">Author: {book.author}</div>
           </div>
         </div>
 
         <div className="content">
-          <p>{book.review}</p>
+          <p>Review: {book.review}</p>
         </div>
       </div>
     </div>
