@@ -12,13 +12,10 @@ function App() {
       author,
       review,
     });
-    console.log(response);
-    // const updatedBooks = [
-    //   ...books,
-    //   { id: Math.floor(Math.random() * 10000), title, author, review },
-    // ];
+    console.log(response.data);
+    const updatedBooks = [...books, response.data];
 
-    // setBooks(updatedBooks);
+    setBooks(updatedBooks);
   };
 
   const deleteBookById = (id) => {
