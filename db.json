@@ -1,3 +1,10 @@
 {
-  "books": []
+  "books": [
+    {
+      "title": "Shock Doctrine",
+      "author": "Naomi Klein",
+      "review": "Must read",
+      "id": 1
+    }
+  ]
 }
