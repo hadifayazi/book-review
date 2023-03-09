@@ -1,7 +1,15 @@
+.app {
+  margin: 10px;
+}
+.app h1 {
+  margin: 20px;
+}
 .card {
   display: flex;
 }
 .book-list {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  margin: auto 20px;
 }

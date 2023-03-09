@@ -18,7 +18,7 @@ function BookShow({ book, onDelete, onEdit }) {
     <div className="card" style={{ backgroundColor: "grey" }}>
       <button className="delete" onClick={handleClick}></button>
       <button className="edit" onClick={handleEditClick}>
-        Edith
+        Edit
       </button>
 
       <div className="card-image">
