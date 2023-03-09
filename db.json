@@ -1,21 +1,21 @@
 {
   "books": [
     {
-      "title": "Shock Doctrine",
+      "title": "Shock Doctrine  ",
       "author": "Naomi Klein",
       "review": "Must read",
       "id": 1
     },
     {
       "title": "The Double",
-      "author": "Dasta",
+      "author": "Fyodor Dostoevsky",
       "review": "Best classic",
       "id": 2
     },
     {
-      "title": "the idiot",
-      "author": "Datsta",
-      "review": "good Classic novel",
+      "title": "The Idiot",
+      "author": "Fyodor Dostoevsky",
+      "review": "Good Classic novel",
       "id": 3
     }
   ]
