@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import BookCreate from "./components/BookCreate";
 import BookList from "./components/BookList";
@@ -8,9 +9,12 @@ function App() {
 
   const fetchBooks = async () => {
     const books = await axios.get("http://localhost:3001/books");
-    console.log(books);
     setBooks(books.data);
   };
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
 
   const handleBookCreate = async (title, author, review) => {
     const response = await axios.post("http://localhost:3001/books", {
