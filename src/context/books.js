@@ -47,7 +47,19 @@ function Provider({ children }) {
     setBooks(updatedBooks);
   };
 
-  return <BookContext.Provider value={books}>{children}</BookContext.Provider>;
+  return (
+    <BookContext.Provider
+      value={{
+        books,
+        fetchBooks,
+        deleteBookById,
+        editBookById,
+        handleBookCreate,
+      }}
+    >
+      {children}
+    </BookContext.Provider>
+  );
 }
 
 export default BookContext;
