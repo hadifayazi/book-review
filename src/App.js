@@ -6,6 +6,12 @@ import BookList from "./components/BookList";
 function App() {
   const [books, setBooks] = useState([]);
 
+  const fetchBooks = async () => {
+    const books = await axios.get("http://localhost:3001/books");
+    console.log(books);
+    setBooks(books.data);
+  };
+
   const handleBookCreate = async (title, author, review) => {
     const response = await axios.post("http://localhost:3001/books", {
       title,
