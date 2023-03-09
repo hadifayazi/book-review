@@ -1,3 +1,16 @@
 {
-  "books": []
+  "books": [
+    {
+      "title": "Shock Doctrine",
+      "author": "Naomi Klein",
+      "review": "Must read",
+      "id": 1
+    },
+    {
+      "title": "The Double",
+      "author": "Dasta",
+      "review": "Best classic",
+      "id": 2
+    }
+  ]
 }
