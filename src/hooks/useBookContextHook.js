@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import BookContext from "../context/books";
+import BooksContext from "../context/books";
 
 function useBooksContext() {
-  return useContext(BookContext);
+  return useContext(BooksContext);
 }
 export default useBooksContext;

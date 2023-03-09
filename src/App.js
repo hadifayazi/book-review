@@ -5,16 +5,18 @@ import useBooksContext from "./hooks/useBookContextHook";
 
 function App() {
   const { fetchBooks } = useBooksContext();
+
   useEffect(() => {
     fetchBooks();
-  }, []);
+  }, [fetchBooks]);
 
   return (
     <div className="app">
-      <h1>Reading list:</h1>
+      <h1>Reading List</h1>
       <BookList />
       <BookCreate />
     </div>
   );
 }
+
 export default App;

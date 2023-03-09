@@ -1,15 +1,15 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useCallback } from "react";
 import axios from "axios";
 
-const BookContext = createContext();
+const BooksContext = createContext();
 
 function Provider({ children }) {
   const [books, setBooks] = useState([]);
 
-  const fetchBooks = async () => {
+  const fetchBooks = useCallback(async () => {
     const books = await axios.get("http://localhost:3001/books");
     setBooks(books.data);
-  };
+  }, []);
 
   const handleBookCreate = async (title, author, review) => {
     const response = await axios.post("http://localhost:3001/books", {
@@ -48,7 +48,7 @@ function Provider({ children }) {
   };
 
   return (
-    <BookContext.Provider
+    <BooksContext.Provider
       value={{
         books,
         fetchBooks,
@@ -58,9 +58,9 @@ function Provider({ children }) {
       }}
     >
       {children}
-    </BookContext.Provider>
+    </BooksContext.Provider>
   );
 }
 
-export default BookContext;
+export default BooksContext;
 export { Provider };
