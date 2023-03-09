@@ -1,12 +1,6 @@
 {
   "books": [
     {
-      "title": "Shock Doctrine  ",
-      "author": "Naomi Klein",
-      "review": "Must read",
-      "id": 1
-    },
-    {
       "title": "The Double",
       "author": "Fyodor Dostoevsky",
       "review": "Best classic",

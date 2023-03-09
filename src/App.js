@@ -22,13 +22,13 @@ function App() {
       author,
       review,
     });
-    console.log(response.data);
     const updatedBooks = [...books, response.data];
 
     setBooks(updatedBooks);
   };
 
-  const deleteBookById = (id) => {
+  const deleteBookById = async (id) => {
+    await axios.delete(`http://localhost:3001/books/${id}`);
     const updatedBooks = books.filter((book) => book.id !== id);
     setBooks(updatedBooks);
   };
@@ -40,7 +40,6 @@ function App() {
       review: newReview,
     });
 
-    console.log(response);
     const updatedBooks = books.map((book) => {
       if (book.id === id) {
         return {
